@@ -35,11 +35,11 @@ if st.sidebar.button("🔮 Predict Personality"):
         st.balloons()
 
         # Optional message
-if prediction.lower().startswith("intro"):
+        if prediction.lower().startswith("intro"):
             st.info("You seem reflective and enjoy solitude. 📚")
-elif prediction.lower().startswith("extro"):
+        elif prediction.lower().startswith("extro"):
             st.info("You're outgoing and thrive in social settings! 🎉")
-else:
+        else:
             st.info("You have a unique mix of traits! 🌈")
 
 # Run
