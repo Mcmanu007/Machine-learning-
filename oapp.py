@@ -2,8 +2,6 @@ import streamlit as st
 import pandas as pd
 import pickle
 
-import os
-
 def main():
     st.set_page_config(page_title="Personality Predictor", layout="centered")
     st.title("🧠 Personality Predictor App")
@@ -12,8 +10,6 @@ def main():
     # Load pre-trained model
     with open("personality_model.pkl", "rb") as f:
         model = pickle.load(f)
-
-
 
 st.sidebar.header("📋Input Your Details")
 
@@ -28,8 +24,8 @@ user_input = pd.DataFrame([{
         "Post_frequency": st.sidebar.slider("📱 Posts/Week", 0, 50, 5)
     }])
 
-    # Only define and use prediction inside the button login
-if st.sidebar.button("🔮 Predict Personality"):
+    # Only define and use prediction inside the button logic
+    if st.sidebar.button("🔮 Predict Personality"):
         prediction = model.predict(user_input)[0]
         st.success(f"### 🎯 Predicted Personality: **{prediction}**")
         st.balloons()
@@ -42,6 +38,7 @@ if st.sidebar.button("🔮 Predict Personality"):
         else:
             st.info("You have a unique mix of traits! 🌈")
 
-# Run
+# Run the app
 if __name__ == "__main__":
     main()
+
