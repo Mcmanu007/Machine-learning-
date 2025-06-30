@@ -18,7 +18,7 @@ def main():
 st.sidebar.header("📋Input Your Details")
 
     # Sidebar inputs
-    user_input = pd.DataFrame([{
+user_input = pd.DataFrame([{
         "Time_spent_Alone": st.sidebar.slider("⏰ Time Spent Alone (hours/week)", 0, 100, 10),
         "Stage_fear": 1 if st.sidebar.selectbox("😰 Do you have stage fear?", ["Yes", "No"]) == "Yes" else 0,
         "Social_event_attendance": st.sidebar.slider("🎉 Events Attended/Month", 0, 30, 5),
@@ -28,18 +28,18 @@ st.sidebar.header("📋Input Your Details")
         "Post_frequency": st.sidebar.slider("📱 Posts/Week", 0, 50, 5)
     }])
 
-    # Only define and use prediction inside the button logic
-    if st.sidebar.button("🔮 Predict Personality"):
+    # Only define and use prediction inside the button login
+if st.sidebar.button("🔮 Predict Personality"):
         prediction = model.predict(user_input)[0]
         st.success(f"### 🎯 Predicted Personality: **{prediction}**")
         st.balloons()
 
         # Optional message
-        if prediction.lower().startswith("intro"):
+if prediction.lower().startswith("intro"):
             st.info("You seem reflective and enjoy solitude. 📚")
-        elif prediction.lower().startswith("extro"):
+elif prediction.lower().startswith("extro"):
             st.info("You're outgoing and thrive in social settings! 🎉")
-        else:
+else:
             st.info("You have a unique mix of traits! 🌈")
 
 # Run
