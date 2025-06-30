@@ -11,7 +11,7 @@ def main():
 
     # Load pre-trained model
     with open("personality_model.pkl", "rb") as f:
-    model = pickle.load(f)
+        model = pickle.load(f)
 
 
 
