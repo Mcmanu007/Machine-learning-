@@ -8,7 +8,7 @@ def main():
     st.markdown("Provide your behavioral inputs to predict your personality type!")
 
     # Load pre-trained model
-    model = pickle.load(open("model.pkl", "rb"))
+    model = pickle.load(open("personality_model.pkl", "rb"))
 
 
     st.sidebar.header("📋 Input Your Details")
