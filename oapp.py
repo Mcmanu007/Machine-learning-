@@ -10,10 +10,8 @@ def main():
     st.markdown("Provide your behavioral inputs to predict your personality type!")
 
     # Load pre-trained model
-
-model_path = os.path.join(os.path.dirname(__file__), 'personality_model.pkl')
-with open(model_path, 'rb') as f:
-    model = pickle.load(f)
+with open("personality_model.pkl", "rb") as f:
+        model = pickle.load(f)
 
 
 
