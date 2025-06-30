@@ -25,7 +25,7 @@ user_input = pd.DataFrame([{
     }])
 
     # Only define and use prediction inside the button logic
-    if st.sidebar.button("🔮 Predict Personality"):
+if st.sidebar.button("🔮 Predict Personality"):
         prediction = model.predict(user_input)[0]
         st.success(f"### 🎯 Predicted Personality: **{prediction}**")
         st.balloons()
