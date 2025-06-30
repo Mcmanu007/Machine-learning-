@@ -2,14 +2,15 @@ import streamlit as st
 import pandas as pd
 import pickle
 
+    # Load pre-trained model
+with open("personality_model.pkl", "rb") as f:
+        model = pickle.load(f)
 def main():
     st.set_page_config(page_title="Personality Predictor", layout="centered")
     st.title("🧠 Personality Predictor App")
     st.markdown("Provide your behavioral inputs to predict your personality type!")
 
-    # Load pre-trained model
-    with open("personality_model.pkl", "rb") as f:
-        model = pickle.load(f)
+
 
 st.sidebar.header("📋Input Your Details")
 
